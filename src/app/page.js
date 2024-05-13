@@ -1,113 +1,162 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from 'react';
+import Helmet from "react-helmet";
+import axios from "axios";
 
 export default function Home() {
+
+  const handleClick = () => {
+    document.getElementById('hero_section').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // const handleWaitList = (email) => {
+  //   //  call joseph159.pythonanywhere.com/join_waitlist and send the email
+  //   axios.post('https://joseph159.pythonanywhere.com/join_waitlist', {
+  //     email: email
+  //   })
+  //     .then(function (response) {
+  //       console.log(response);
+
+  //     }
+  //     )
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+
+  //   console.log("Join Waitlist");
+  // }
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <html data-theme="nord">
+      <main >
+        <div className="navbar bg-darkBlue">
+          <a className="btn btn-ghost text-xl text-whiteWhite">ExamNoodle</a>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <Image src="/circle_component.png" className="absolute top-3/4 left-96" alt="circle_component" width={100} height={100} />
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <Image src={"/swigglyLine.png"} className="absolute right-96" alt="circle_component" width={200} height={200} />
+        <div className="hero min-h-screen bg-base-200">
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="hero-content text-center" id="hero_section">
+            <div className="">
+              {/* <Image src="../../circle.png" alt="logo" width={200} height={200} /> */}
+              <h1 className="text-6xl font-bold mb-800 drop-shadow-2xl">Students Shouldn't Be <span className="bg-darkBlue text-whiteWhite">Desperate</span> for Practice Problems</h1>
+              <p className="py-6 text-2xl">Unlimited AI Generated Practice Materials from </p>
+              <div class="flex justify-center">
+                <div class="grid grid-cols-3 grid-flow-col gap-4 mb-20">
+                  <div className="flex justify-center bg-darkBlue w-36 p-5 rounded-lg ml-10 shadow-2xl hover:scale-110 transform transition duration-500">
+                    <p className="text-2xl text-whiteWhite">Notes</p>
+                  </div>
+                  <div className="flex justify-center bg-darkBlue w-36 p-5 rounded-lg  ml-10 shadow-2xl hover:scale-110 transform transition duration-500">
+                    <p className="text-2xl text-whiteWhite">Videos</p>
+                  </div>
+                  <div className="flex justify-center bg-darkBlue w-36 p-5 rounded-lg  ml-10 shadow-2xl hover:scale-110 transform transition duration-500">
+                    <p className="text-2xl text-whiteWhite">Homework</p>
+                  </div>
+                </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+              </div>
+              <p className="py-6 text-2xl">Join the waitlist to get early access</p>
+              {/* <div class="flex justify-center">
+                <div class="flex items-center border border-gray-300 rounded-lg w-2/4 bg-whiteWhite">
+                  <input class="w-full px-4 py-2 outline-none" type="text" placeholder="Email" id="user_email" />
+                  <button class="px-7 py-0 bg-darkBlue text-whiteWhite rounded-r-md" onClick={() => handleWaitList(document.getElementById('user_email').value)}>Join the Waitlist</button>
+                </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+              </div> */}
+
+              <div id="getWaitlistContainer" data-waitlist_id="16804" data-widget_type="WIDGET_2"></div>
+              <Helmet>
+                <link rel="stylesheet" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css" />
+                <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js" />
+              </Helmet>
+              <p>No Spam. We promise</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div className="bg-base-200 py-10">
+          <h2 className="text-5xl font-bold text-center mb-6 mt-10">Students lack enough practice problems</h2>
+          <div className="flex justify-center items-center m-10 text-whiteWhite rounded-lg ">
+            <p className="text-center text-5xl bg-darkBlue w-1/2 p-4">Hindering their Learning</p>
+          </div>
+
+
+        </div>
+
+
+        <div className="hero  bg-base-200">
+
+          <div className="hero-content flex-col lg:flex-row">
+            <Image src="/circle_component.png" className="absolute top-full right-96" alt="circle_component" width={100} height={100} />
+
+            <img src={"/documentToMCQ.png"} className=" rounded-lg" width={600} height={600} />
+            <div>
+              <h1 className="text-5xl font-bold">Convert Documents, Videos, and Notes to MCQs and Exams</h1>
+              <p></p>
+              <div className="py-6">
+                <p className="mb-4">Our platform provides high-quality and relevant questions that are generated directly from your study materials. This ensures that you're focusing on the information that matters most.</p>
+                <p className="mb-4">Whether you're studying for a test, trying to understand a complex topic, or just reviewing your knowledge, our personalized questions can help you achieve your learning goals.</p>
+                <p>Start your personalized study experience today and see the difference it can make in your learning journey.</p>
+              </div>
+              <button className="btn bg-darkBlue text-whiteWhite" onClick={handleClick}>Join the Waitlist</button>
+            </div>
+          </div>
+        </div>
+
+        <Image src={"/swigglyLine.png"} className="absolute left-44" alt="circle_component" width={200} height={200} />
+        <Image src="/circle_component.png" className="absolute right-10" alt="circle_component" width={100} height={100} />
+        <div className="hero  bg-base-200">
+          <div className="hero-content flex-col lg:flex-row-reverse">
+            <img src={"/videoToFlashcards.png"} className="rounded-lg" width={600} height={600} />
+            <div>
+              <h1 className="text-5xl font-bold">Multiple Practice Material Formats</h1>
+              <div className="py-6">
+                <p className="mb-4">Our platform offers a variety of practice material formats to help you study in the way that works best for you. Whether you prefer flashcards, multiple choice questions, or full-length exams, we have you covered.</p>
+                <p className="mb-4">With our AI-generated practice materials, you can study more efficiently and effectively, ensuring that you're fully prepared for your exams and assignments.</p>
+                <p>Sign up for early access today and start studying smarter.</p>
+              </div>
+              <button className="btn bg-darkBlue text-whiteWhite" onClick={handleClick}>Join the Waitlist</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <footer className="footer p-10 bg-darkBlue text-neutral-content">
+          <div>
+            <h2 className="footer-title">ExamNoodle</h2>
+            <p className="text-whiteWhite">Unlimited AI Generated Practice Materials</p>
+          </div>
+          {/* add a join waitlist */}
+          <div>
+            <h2 className="footer-title">Join Waitlist</h2>
+            <div class="flex items
+            -center border border-gray-300 rounded-lg w-full bg-whiteWhite">
+              <input class="w-full px-4 py-2 outline-none" type="text" placeholder="Email" />
+              <button class="px-7 py-0 bg-darkBlue text-whiteWhite rounded-r-md">Join the Waitlist</button>
+            </div>
+          </div>
+          <div>
+            <h2 className="footer-title">Contact Us</h2>
+            <p className="text-whiteWhite">
+
+              <a href="mailto:
+              josephattia159@gmail.com">
+                Email Us
+              </a>
+            </p>
+          </div>
+
+
+        </footer>
+      </main>
+    </html>
   );
 }
