@@ -44,7 +44,7 @@ export default function Home() {
           <div className="hero-content text-center" id="hero_section">
             <div className="">
               {/* <Image src="../../circle.png" alt="logo" width={200} height={200} /> */}
-              <h1 className="text-6xl font-bold mb-800 drop-shadow-2xl">Students Shouldn't Be <span className="bg-darkBlue text-whiteWhite">Desperate</span> for Practice Problems</h1>
+              <h1 className="text-6xl font-bold mb-800 drop-shadow-2xl">Students Shouldn&apos;t Be <span className="bg-darkBlue text-whiteWhite">Desperate</span> for Practice Problems</h1>
               <p className="py-6 text-2xl">Unlimited AI Generated Practice Materials from </p>
               <div class="flex justify-center">
                 <div class="grid grid-cols-3 grid-flow-col gap-4 mb-20">
@@ -100,8 +100,8 @@ export default function Home() {
               <h1 className="text-5xl font-bold">Convert Documents, Videos, and Notes to MCQs and Exams</h1>
               <p></p>
               <div className="py-6">
-                <p className="mb-4">Our platform provides high-quality and relevant questions that are generated directly from your study materials. This ensures that you're focusing on the information that matters most.</p>
-                <p className="mb-4">Whether you're studying for a test, trying to understand a complex topic, or just reviewing your knowledge, our personalized questions can help you achieve your learning goals.</p>
+                <p className="mb-4">Our platform provides high-quality and relevant questions that are generated directly from your study materials. This ensures that you&apos;re focusing on the information that matters most.</p>
+                <p className="mb-4">Whether you&apos;re studying for a test, trying to understand a complex topic, or just reviewing your knowledge, our personalized questions can help you achieve your learning goals.</p>
                 <p>Start your personalized study experience today and see the difference it can make in your learning journey.</p>
               </div>
               <button className="btn bg-darkBlue text-whiteWhite" onClick={handleClick}>Join the Waitlist</button>
@@ -118,7 +118,7 @@ export default function Home() {
               <h1 className="text-5xl font-bold">Multiple Practice Material Formats</h1>
               <div className="py-6">
                 <p className="mb-4">Our platform offers a variety of practice material formats to help you study in the way that works best for you. Whether you prefer flashcards, multiple choice questions, or full-length exams, we have you covered.</p>
-                <p className="mb-4">With our AI-generated practice materials, you can study more efficiently and effectively, ensuring that you're fully prepared for your exams and assignments.</p>
+                <p className="mb-4">With our AI-generated practice materials, you can study more efficiently and effectively, ensuring that you&apos;re fully prepared for your exams and assignments.</p>
                 <p>Sign up for early access today and start studying smarter.</p>
               </div>
               <button className="btn bg-darkBlue text-whiteWhite" onClick={handleClick}>Join the Waitlist</button>
