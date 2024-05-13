@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Helmet from "react-helmet";
 import axios from "axios";
+import Script from 'next/script';
 
 export default function Home() {
 
@@ -28,10 +29,19 @@ export default function Home() {
   //   console.log("Join Waitlist");
   // }
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
 
   return (
     <html data-theme="nord">
-      <main >
         <div className="navbar bg-darkBlue">
           <a className="btn btn-ghost text-xl text-whiteWhite">ExamNoodle</a>
         </div>
@@ -70,9 +80,10 @@ export default function Home() {
               </div> */}
 
               <div id="getWaitlistContainer" data-waitlist_id="16804" data-widget_type="WIDGET_2"></div>
+              <Script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js" />
               <Helmet>
                 <link rel="stylesheet" href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css" />
-                <script src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js" />
+                
               </Helmet>
               <p>No Spam. We promise</p>
             </div>
@@ -95,7 +106,7 @@ export default function Home() {
           <div className="hero-content flex-col lg:flex-row">
             <Image src="/circle_component.png" className="absolute top-full right-96" alt="circle_component" width={100} height={100} />
 
-            <img src={"/documentToMCQ.png"} className=" rounded-lg" width={600} height={600} />
+            <Image src={"/documentToMCQ.png"} className=" rounded-lg" width={600} height={600} />
             <div>
               <h1 className="text-5xl font-bold">Convert Documents, Videos, and Notes to MCQs and Exams</h1>
               <p></p>
@@ -109,11 +120,11 @@ export default function Home() {
           </div>
         </div>
 
-        <Image src={"/swigglyLine.png"} className="absolute left-44" alt="circle_component" width={200} height={200} />
+        <Image src={"/swigglyLine.png"} className="absolute left-0" alt="circle_component" width={200} height={200} />
         <Image src="/circle_component.png" className="absolute right-10" alt="circle_component" width={100} height={100} />
         <div className="hero  bg-base-200">
           <div className="hero-content flex-col lg:flex-row-reverse">
-            <img src={"/videoToFlashcards.png"} className="rounded-lg" width={600} height={600} />
+            <Image src={"/videoToFlashcards.png"} className="rounded-lg" width={600} height={600} />
             <div>
               <h1 className="text-5xl font-bold">Multiple Practice Material Formats</h1>
               <div className="py-6">
@@ -156,7 +167,6 @@ export default function Home() {
 
 
         </footer>
-      </main>
     </html>
   );
 }
