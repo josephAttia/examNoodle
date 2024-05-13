@@ -45,8 +45,8 @@ export default function Home() {
       <div className="navbar bg-darkBlue">
         <a className="btn btn-ghost text-xl text-whiteWhite">ExamNoodle</a>
       </div>
-
-      <Image src="/circle_component.png" className="absolute top-3/4 left-96" alt="circle_component" width={100} height={100} />
+{/* 
+      <Image src="/circle_component.png" className="absolute top-3/4 left-96" alt="circle_component" width={100} height={100} /> */}
 
       <Image src={"/swigglyLine.png"} className="absolute right-96" alt="circle_component" width={200} height={200} />
       <div className="hero min-h-screen bg-base-200">
@@ -57,7 +57,7 @@ export default function Home() {
             <h1 className="text-6xl font-bold mb-800 drop-shadow-2xl">Students Shouldn&apos;t Be <span className="bg-darkBlue text-whiteWhite">Desperate</span> for Practice Problems</h1>
             <p className="py-6 text-2xl">Unlimited AI Generated Practice Materials from </p>
             <div class="flex justify-center">
-              <div class="grid grid-cols-3 grid-flow-col gap-4 mb-20">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
                 <div className="flex justify-center bg-darkBlue w-36 p-5 rounded-lg ml-10 shadow-2xl hover:scale-110 transform transition duration-500">
                   <p className="text-2xl text-whiteWhite">Notes</p>
                 </div>
@@ -96,7 +96,7 @@ export default function Home() {
       <div className="bg-base-200 py-10">
         <h2 className="text-5xl font-bold text-center mb-6 mt-10">Students lack enough practice problems</h2>
         <div className="flex justify-center items-center m-10 text-whiteWhite rounded-lg ">
-          <p className="text-center text-5xl bg-darkBlue w-1/2 p-4">Hindering their Learning</p>
+          <p className="text-center text-5xl bg-darkBlue w-1/2 p-4 md:text-3xl">Hindering their Learning</p>
         </div>
 
 
